@@ -1,0 +1,99 @@
+.expect{
+    padding: clamp(3.75rem, 2.928rem + 3.51vw, 5.625rem) 0 clamp(2.5rem, 1.129rem + 5.85vw, 5.625rem);
+    &__inner{
+        display: flex;
+        justify-content: space-between;
+        gap:20px;
+    }
+    &__imgbox{
+        position: relative;
+        padding-top: 67px;
+        &:before{
+            content:"";
+            position: absolute;
+            z-index: -1;
+            width: 327px;
+            height: 327px;
+            top: 0;
+            left: -95px;
+            background-image: url(../img/icon/dots.svg);
+        }
+    }
+    &__img{
+        align-self: flex-end;
+        border-radius: 20px;
+        img{
+            border-radius: inherit;
+        }
+    }
+    &__content{
+        flex-basis: 481px;
+        display: flex;
+        flex-direction: column;
+        gap:15px;
+    }
+    &__textbox{
+        margin-bottom: 10px;
+        p{
+            &:not(:last-of-type){
+                margin-bottom: 10px;
+            }
+        }
+    }
+    &__list{
+        display: flex;
+        flex-direction: column;
+        gap:18px;
+    }
+    &__item{
+        display: flex;
+        gap:20px;
+    }
+    &__item-decor{
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: 2px solid rgb(78, 175, 78);
+        @extend %flexCenter;
+        position: relative;
+        flex-shrink: 0;
+        &:before{
+            position: absolute;
+            content:"";
+            width: 11px;
+            height: 8px;
+            background-repeat: no-repeat;
+            background-image: url(../img/icon/arrowAccent.svg);
+        }
+    }
+    &__item-text{
+        line-height: 1.16;
+    }
+    @media(max-width:1279px){
+        &__imgbox{
+            padding: 0;
+            &:before{
+                display: none;
+            }
+        }
+    }
+    @media(max-width:1023px){
+        &__inner{
+            flex-direction: column-reverse;
+        }
+        &__content{
+            flex-basis: auto;
+        }
+        &__img{
+            text-align: center;
+        }
+    }
+    @media(max-width:767px){
+        &__img{
+            img{
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+}

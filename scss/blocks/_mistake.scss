@@ -1,0 +1,43 @@
+.mistake{
+    padding: clamp(3.75rem, 0.598rem + 13.45vw, 10.938rem) 0;
+    background-color: #f5f5f5;
+    &__inner{
+        max-width: 581px;
+        border-radius: $borderRadiusCard;
+        background-color: #fff;
+        padding: clamp(3.125rem, 2.577rem + 2.34vw, 4.375rem) clamp(2.5rem, 1.294rem + 5.15vw, 5.25rem);
+        margin: 0 auto;
+    }
+    &__content{
+        text-align: center;
+    }
+    &__titlebox{
+        display: flex;
+        flex-direction: column;
+        gap:5px;
+        margin-bottom: 5px;
+    }
+    &__title{
+        @extend %title;
+        font-size: clamp(3.75rem, 2.105rem + 7.02vw, 7.5rem);
+    }
+    &__subtitle{
+        @extend %title;
+        font-size: clamp(2.125rem, 1.412rem + 3.04vw, 3.75rem);
+    }
+    &__textbox{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        max-width: 277px;
+        margin: 0 auto 44px;
+    }
+    &__text{
+        color:#595566;
+    }
+    &__link{
+        @extend %btn--accent;
+        padding: 0 56px;
+        display: inline-flex;
+    }
+}

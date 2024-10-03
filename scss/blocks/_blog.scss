@@ -1,0 +1,63 @@
+.blog{
+    background: rgb(245, 245, 245);
+    padding: clamp(4.375rem, 1.36rem + 12.87vw, 11.25rem) 0;
+    &__box{
+        margin-bottom: 45px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap:20px;
+    }
+    &__items{
+        display: grid;
+        justify-content: space-between;
+        gap:20px;
+        grid-template-columns: repeat(2,1fr);
+    }
+    &__item{
+        display: flex;
+        flex-direction: column;
+        gap:28px;
+    }
+    &__img{
+        border-radius: $borderRadiusCard;
+        margin-bottom: 28px;
+        display: inline-block;
+        img{
+            border-radius: inherit;
+            object-fit: cover;
+        }
+    }
+    &__info{
+        display: flex;
+        flex-direction: column;
+        gap:10px;
+        height: 100%
+    }
+    &__title{
+        @extend %title;
+        font-size: 30px;
+        text-transform: capitalize;
+    }
+    &__text{
+        color:$main-color;
+        flex:1;
+    }
+    @media(max-width:1279px){
+        &__items{
+            grid-template-columns: repeat(1,1fr);
+        }
+        &__img{
+            margin: 0;
+            text-align: center;
+        }
+    }
+    @media(max-width:650px){
+        &__img{
+            img{
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+}

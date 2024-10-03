@@ -1,0 +1,93 @@
+.ourHistory{
+    padding: clamp(3.75rem, 1.283rem + 10.53vw, 9.375rem) 0;
+    &__inner{
+        display: flex;
+        flex-direction: column;
+        gap:44px;
+    }
+    &__content{
+        max-width: 712px;
+        margin: 0 auto;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap:4px;
+    }
+    &__box{
+        .box__pubble{
+            margin: 0 auto;
+        }
+    }
+    &__videobox{
+        text-align: center;
+    }
+    &__video{
+        @extend %flexCenter;
+        position: relative;
+        border-radius: 30px;
+        width: 962px;
+        height: 369px;
+        margin: 0 auto;
+        overflow: hidden;
+        &:before{
+            position: absolute;
+            content:"";
+            inset:0;
+            background-color: rgba(24, 24, 24,0.5);
+            border-radius: inherit;
+        }
+        img{
+            margin: 0 auto;
+            border-radius: 20px;
+            transition: all .6s;
+        }
+        &:hover{
+            img{
+                scale:1.2;
+            }
+        }
+    }
+    &__video-play{
+        position: absolute;
+        width: clamp(2.938rem, 2.389rem + 2.34vw, 4.188rem);
+        height: clamp(2.938rem, 2.389rem + 2.34vw, 4.188rem);
+        @extend %flexCenter;
+        border-radius: 50%;
+        background-color: #fff;
+        z-index: 1000;
+        &:before{
+            position: absolute;
+            content:"";
+            width: 13px;
+            height: 19px;
+            background-repeat: no-repeat;
+            background-image: url(../img/icon/play.svg);
+            z-index: 3;
+        }
+        &::after{
+            position: absolute;
+            content:"";
+            width: inherit;
+            height: inherit;
+            background-color: rgba(208, 208, 208,0.3);
+            border-radius: inherit;
+            z-index: -10;
+            animation: videoPlay 3s linear infinite;
+        }
+    }
+    @media(max-width:1023px){
+        &__video{
+            width: 100%;
+            height: auto;
+        }
+    }
+}
+
+@keyframes videoPlay{
+    0%{
+        scale:1;
+    }
+    100%{
+        scale:1.5;
+    }
+}

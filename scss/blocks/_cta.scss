@@ -1,0 +1,88 @@
+.cta{
+    padding-bottom: clamp(3.75rem, 1.283rem + 10.53vw, 9.375rem);
+    &--paddingTopYes{
+        padding-top: clamp(3.75rem, 1.283rem + 10.53vw, 9.375rem);
+    }
+    &__inner{
+        background-color: #181818;
+        border-radius: $borderRadiusCard;
+        display: flex;
+        position: relative;
+        overflow: hidden;
+        &:before{
+            position: absolute;
+            content:"";
+            width: 686px;
+            height: 412px;
+            top: 0;
+            right: -70px;
+            background-image: url(../img/cta/bg.jpg);
+            border-radius: 30px;
+            rotate:-10deg;
+            z-index: 1;
+            background-size: contain;
+            @media(max-width:767px){
+                width: 100%;
+                height: 100%;
+                rotate:0deg;
+                inset:0;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+        }
+    }
+    &__content{
+        flex-basis: 600px;
+        align-self: center;
+        position: relative;
+        z-index: 2;
+        padding: clamp(2.5rem, 1.349rem + 4.91vw, 5.125rem) 0 clamp(2.5rem, 1.349rem + 4.91vw, 5.125rem) clamp(3.75rem, 2.654rem + 4.68vw, 6.25rem);
+        @media(max-width:767px){
+            padding-right: 30px;
+            padding-left: 30px;
+        }
+    }
+    .box__title{
+        color:#fff;
+    }
+    &__textbox{
+        color:#fff;
+        margin-bottom: 12px;
+        p{
+            &:not(:last-of-type){
+                margin-bottom: 10px;
+            }
+        }
+    }
+    &__form{
+        display: flex;
+        align-items: center;
+        gap:30px;
+        justify-content: space-between;
+        @media(max-width:767px){
+            flex-direction: column;
+            gap: 15px;
+        }
+    }
+    &__input{
+        @extend %input;
+        flex:1;
+        color:#181818;
+        background-color: #fff;
+        @media(max-width:767px){
+            width: 100%;
+        }
+    }
+    &__btn{
+        @extend %btn--accent;
+        background-color: $accent-color;
+        @media(max-width:767px){
+            width: 100%;
+        }
+        &:hover{
+            transform: translateY(-4px);
+            background-color:#fff;
+            color:#181818;
+        }
+    }
+}

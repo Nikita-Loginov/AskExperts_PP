@@ -1,0 +1,132 @@
+.top{
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: clamp(9.375rem, 8.553rem + 3.51vw, 11.25rem) 0;
+    &--home{
+        background-image: url(../img/top/topHome/bg.jpg);
+    }
+    &--about{
+        background-image: url(../img/top/topAbout/bg.jpg);
+    }
+    &--services{
+        background-image: url(../img/top/topServices/bg.jpg);
+        background-position: bottom;
+    }
+    &--serviceSingle{
+        background-image: url(../img/top/topServiceSingle/bg.png);
+    }
+    &--team{
+        background-image: url(../img/top/topTeam/bg.jpg);
+    }
+    &--caseStudy{
+        background-image: url(../img/top/caseStudy/bg.jpg);
+    }
+    &--caseStudyCase{
+        background-image: url(../img/top/caseStudyCase/bg.jpg);
+    }
+    &--blog{
+        background-image: url(../img/top/blog/bg.jpg);
+    }
+    &--blogSingle{
+        background-image: url(../img/top/blogSingle/bg.jpg);
+    }
+    &--contact{
+        background-image: url(../img/top/contact/bg.jpg);
+    }
+    &--changeLog{
+        background-image: url(../img/top/changeLog/bg.jpg);
+    }
+    &--licenses{
+        background-image: url(../img/top/licenses/bg.jpg);
+    }
+    &--protection{
+        background-image: url(../img/top/protection/bg.jpg);
+    }
+    &--bigcontent{
+        .top__content{
+            max-width: 550px;
+        }
+        
+    }
+    &--smallcontent{
+        .top__content{
+            max-width: 788px;
+        }
+    }
+    &__content{
+        backdrop-filter: blur(11px);
+        background: rgba(255, 255, 255, 0.55);
+        border-radius: $borderRadiusCard;
+        padding: clamp(1.875rem, 1.19rem + 2.92vw, 3.438rem);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap:20px;
+    }
+    &__pubble{
+        @extend %pubble;
+    }
+    &__title{
+        @extend %title;
+        font-size: clamp(1.875rem, 1.327rem + 2.34vw, 3.125rem);
+        text-transform: capitalize;
+    }
+    &__btnbox{
+        display: flex;
+        gap:15px;
+        width: 100%;
+    }
+    &__btnlink{
+        @extend %btn--default;
+        flex-basis: 40%
+    }
+    &__btn{
+        @extend %flexCenter;
+        min-height: $minHeight-btn;
+        @include padding(0,30px,0,10px);
+        @include borderRadius($borderRadiusBtn);
+        background: #fff;
+        transition: all .5s;
+        position: relative;
+        &:hover{
+            transform: translateY(-4px);
+        }
+    }
+    &__btn-text{
+        font-size: 18px;
+        line-height: 160%;
+        color:#353535;
+        margin-left: 11px;
+    }
+    &__btn-decor{
+        width: 44px;
+        height: 44px;
+        background-color: #FFC42B;
+        border-radius: 50%;
+        @extend %flexCenter;
+        flex-shrink: 0;
+        &:before{
+            position: absolute;
+            content:"";
+            width: 14px;
+            height: 17px;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-image: url(../img/icon/calendar.svg);
+            transition: all .5s;
+        }
+    }
+    @media(max-width:767px){
+        &--bigcontent,
+        &--smallcontent{
+            .top__content{
+                max-width: 100%;
+            }
+            
+        }
+        &__btnbox{
+            width: 100%;
+            flex-direction: column;
+        }
+    }
+}

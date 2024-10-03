@@ -1,0 +1,39 @@
+.financial-swiper{
+    &__slide{
+        padding: 44px 35px 44px 35px;
+        background-color: #ebebeb;
+        border-radius: $borderRadiusCard;
+        display: flex;
+        flex-direction: column;
+        gap:24px;
+        height: 100%;
+    }
+    &__content{
+        display: flex;
+        flex-direction: column;
+        gap:10px;
+    }
+    &__title{
+        @extend %text;
+        font-size: 25px;
+    }
+    &__text{
+        color:#595566;
+    }
+    .swiper-wrapper{
+        align-items: stretch;
+    }
+    .swiper-slide{
+        height: auto;
+    }
+    @media(max-width:550px){
+        padding-bottom: 70px;
+    }
+}
+
+.swiper-pagination{
+    display: none;
+    @media(max-width:550px){
+        display: block;
+    }
+}

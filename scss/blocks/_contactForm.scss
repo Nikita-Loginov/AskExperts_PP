@@ -1,0 +1,81 @@
+.contactForm{
+    padding: clamp(3.75rem, 1.283rem + 10.53vw, 9.375rem) 0 clamp(3.75rem, 2.654rem + 4.68vw, 6.25rem);
+    &__inner{
+        display: flex;
+        justify-content: space-between;
+        gap:20px;
+    }
+    &__form{
+        flex-basis: 690px;
+    }
+    &__labelbox{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap:clamp(0.875rem, 0.601rem + 1.17vw, 1.5rem) clamp(0.875rem, 0.491rem + 1.64vw, 1.75rem);
+        margin-bottom: 30px;
+    }
+    &__label{
+        display: flex;
+        flex-direction: column;
+        gap:8px;
+        &--big{
+            grid-column: span 2;
+        }
+    }
+    &__label-input{
+        @extend %input;
+    }
+    &__label-textarea{
+        @extend %textarea;
+    }
+    &__btn{
+        @extend %btn--default;
+    }
+    &__imgbox{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap:20px 24px;
+    }
+    &__img{
+        cursor: pointer;
+        border-radius: 50px;
+        overflow: hidden;
+        &--big{
+            grid-row: span 2;
+        }
+        img{
+            border-radius: inherit;
+            transition: all .6s;
+            &:hover{
+                scale:1.2;
+            }
+        }
+    }
+    @media(max-width:1023px){
+        &__inner{
+            flex-direction: column;
+        }
+        &__form{
+            flex-basis: auto;
+        }
+        &__img{
+            img{
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+    @media(max-width:550px){
+        &__labelbox{
+            grid-template-columns:repeat(1,1fr);
+        }
+        &__label{
+            &--big{
+                grid-column: span 1;
+            }
+        }
+        &__btn{
+            width: 100%;
+        }
+    }
+}

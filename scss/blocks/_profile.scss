@@ -1,0 +1,39 @@
+.profile{
+    border-radius: $borderRadiusCard;
+    background-color: #181818;
+    padding: clamp(2.5rem, 1.952rem + 2.34vw, 3.75rem) clamp(2.375rem, 1.936rem + 1.87vw, 3.375rem);
+    display: flex;
+    align-items: center;
+    gap:35px;
+    &__imgbox{
+        img{
+            border-radius: 50%;
+        }
+    }
+    &__content{
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        color:#fff;
+        max-width: 458px;
+        align-items: flex-start;
+    }
+    &__name{
+        @extend %text;
+        font-size: 35px;
+        color:#fff;
+        margin-bottom: 10px;
+    }
+    &__positition{
+        @extend %lato-400;
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+    &__info{
+        margin-bottom: 15px;
+    }
+    @media(max-width: 767px){
+        flex-direction: column;
+        margin: 0 auto;
+    }
+}

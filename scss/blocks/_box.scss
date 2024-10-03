@@ -1,0 +1,90 @@
+.box{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap:clamp(0.313rem, -0.154rem + 1.99vw, 1.375rem);
+    &__pubble{
+        @extend %pubble;
+        position: relative;
+        z-index: 10;
+    }
+    &__title{
+        @extend %title;
+    }
+    &__content{
+        display: flex;
+        flex-direction: column;
+        gap:clamp(0.313rem, -0.154rem + 1.99vw, 1.375rem);
+        align-items: flex-start;
+        max-width: 731px;
+    }
+    &__link{
+        @extend %btn--accent;
+    }
+    &__btnbox{
+        display: flex;
+        align-items: center;
+        gap:26px;
+        @media(max-width:550px){
+            display: none;
+        }
+    }
+    &__btn-prev,
+    &__btn-next{
+        width: clamp(3.125rem, 2.577rem + 2.34vw, 4.375rem);
+        height: clamp(3.125rem, 2.577rem + 2.34vw, 4.375rem);
+        border-radius: 50%;
+        @extend %flexCenter;
+        position: relative;
+        cursor: pointer;
+        &:before{
+            content:"";
+            position: absolute;
+            width: 25px;
+            height: 23px;
+            background-repeat: no-repeat;
+            transition: all .6s;
+        }
+    }
+    &__btn-prev{
+        background-color: #181818;
+        transition: all .6s;
+        &:hover{
+            scale:1.05;
+        }
+        &:before{
+            background-image: url(../img/icon/arrowPrev.svg);
+        }
+    }
+    &__btn-next{
+        background-color: #FFC42B;
+        transition: all .6s;
+        &:hover{
+            scale:1.05;
+        }
+        &:before{
+            background-image: url(../img/icon/arrowNext.svg);
+        }
+    }
+    @media(max-width:1023px){
+        &--mediaAllWidth{
+            &.blog__box,
+            &.features__box,
+            &.team__box{
+                flex-direction: column;
+            }
+            .box__pubble{
+                margin: 0 auto;
+            }
+            .box__link{
+                width: 100%;
+            }
+            .box__content{
+                text-align: center;
+                max-width: 100%;
+                width: 100%;
+                align-items: center;
+            }
+        }
+    }
+}

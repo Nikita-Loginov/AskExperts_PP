@@ -1,0 +1,44 @@
+.ourTeam{
+    padding: clamp(3.75rem, 1.283rem + 10.53vw, 9.375rem) 0;
+    background-color: #f5f5f5;
+    &__inner{
+        display: flex;
+        flex-direction: column;
+        gap:44px;
+    }
+    &__content{
+        max-width: 644px;
+        display: flex;
+        flex-direction: column;
+        gap:5px;
+    }
+    &__textbox{
+        p{
+            &:not(:last-child){
+                margin-bottom: 10px;
+            }
+        }
+    }
+    &__items{
+        display: grid;
+        grid-template-columns: repeat(3,366px);
+        justify-content: space-between;
+        gap: 20px;
+    }
+    @media(max-width:1200px){
+        &__items{
+            grid-template-columns: repeat(2,366px);
+            justify-content: space-evenly;
+        }
+    }
+    @media(max-width:800px){
+        &__items{
+            grid-template-columns: repeat(2,auto);
+        }
+    }
+    @media(max-width:550px){
+        &__items{
+            grid-template-columns: repeat(1,auto);
+        }
+    }
+}

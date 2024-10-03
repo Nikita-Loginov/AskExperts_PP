@@ -1,0 +1,73 @@
+.contactForm-proccess{
+    flex-basis: 410px;
+    &__textbox{
+        margin-bottom: 40px;
+        color:#595566;
+    }
+    &__list{
+        display: flex;
+        flex-direction: column;
+        gap: 56px;
+    }
+    &__link{
+        display: flex;
+        align-items: center;
+        gap: 16px;
+    }
+    &__link-decor{
+        border-radius: 50%;
+        @extend %flexCenter;
+        position: relative;
+        flex-shrink: 0;
+        width: 52px;
+        height: 52px;
+        &:before{
+            position: relative;
+            content:"";
+            background-repeat: no-repeat;
+        }
+        &--yellow{
+            background-color: rgb(255, 236, 187);
+            &:before{
+                background-image: url(../img/icon/tel-yellow.svg);
+                width: 25px;
+                height: 25px;
+            }
+        }
+        &--green{
+            background-color:rgb(164, 237, 164);
+            &:before{
+                background-image: url(../img/icon/time.svg);
+                width: 24px;
+                height: 24px;
+            }
+        }
+        &--pink{
+            background-color:rgb(234, 234, 234);
+            &:before{
+                background-image: url(../img/icon/geo.svg);
+                width: 21px;
+                height: 26px;
+            }
+        }
+    }
+    &__link-content{
+        display: flex;
+        flex-direction: column;
+        gap:3px;
+    }
+    &__link-text{
+        color:#595566;
+    }
+    &__link-subtext{
+        @extend %text;
+    }
+    @media(max-width:1023px){
+        flex-basis: auto;
+        &__list{
+            display: grid;
+            grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
+            justify-content: space-around;
+        }
+    }
+}

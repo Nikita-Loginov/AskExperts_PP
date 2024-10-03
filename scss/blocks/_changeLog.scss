@@ -1,0 +1,36 @@
+.changeLog{
+    padding: clamp(3.75rem, 1.283rem + 10.53vw, 9.375rem) 0;
+    &__inner{
+        padding: clamp(4.375rem, 1.771rem + 11.11vw, 10.313rem) 20px;
+        background-color: #181818;
+        border-radius: $borderRadiusCard;
+    }
+    &__content{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        justify-content: center
+    }
+    &__title{
+        @extend %title;
+        color:#fff;
+    }
+    &__link{
+        @extend %flexCenter;
+        min-height: $minHeight-btn;
+        @include padding(0,42px,0,42px);
+        @include borderRadius($borderRadiusBtn);
+        color:#595566;
+        background-color: #fff;
+        transition: all .5s;
+        &:hover{
+            transform: translateY(-4px);
+        }
+    }
+    @media(max-width:767px){
+        &__content{
+            flex-direction: column;
+            gap: 20px;
+        }
+    }
+}

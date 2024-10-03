@@ -1,0 +1,35 @@
+html{
+    scroll-behavior: smooth;
+    height: 100%;
+}
+
+body{
+    font-size: 16px;
+    line-height: 1.5;
+    background-color: $bg-color;
+    color:$main-color;
+    @extend %lato-400;
+    overflow-x: hidden;
+    height: 100%;
+    &.open--menu{
+        overflow: hidden;
+    }
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.main{
+    flex:1;
+}
+
+.container{
+    max-width: 1230px;
+    margin: 0 auto;
+    padding: $padding-container;
+}
+
+

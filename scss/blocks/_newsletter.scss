@@ -1,0 +1,69 @@
+.newsletter{
+    padding-bottom: clamp(3.75rem, 1.283rem + 10.53vw, 9.375rem);
+    &__inner{
+        background-color: #181818;
+        border-radius: $borderRadiusCard;
+        padding: clamp(2.5rem, 1.129rem + 5.85vw, 5.625rem);
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        align-items: center;
+    }
+    &__content{
+        flex-basis: 400px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+    &__title{
+        @extend %text;
+        font-size: clamp(1.625rem, 1.378rem + 1.05vw, 2.188rem);
+        color:#fff;
+        text-transform: capitalize;
+    }
+    &__text{
+        color:#fff;
+    }
+    &__form{
+        display: flex;
+        gap: 24px;
+        align-items: flex-start;
+        flex-basis: 510px;
+    }
+    &__input{
+        @extend %input;
+        background-color: #fff;
+        flex:1;
+    }
+    &__btn{
+        @extend %btn--accent;
+        padding: 0 45px;
+        &:hover{
+            background-color: #fff;
+            color:#181818;
+        }
+    }
+    @media(max-width:1023px){
+        &__inner{
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        &__content,
+        &__form{
+            flex-basis: auto;
+        }
+        &__form{
+            width: 100%;
+        }
+    }
+    @media(max-width:767px){
+        &__form{
+            flex-direction: column;
+            gap: 15px;
+        }
+        &__input,
+        &__btn{
+            width: 100%;
+        }
+    }
+}

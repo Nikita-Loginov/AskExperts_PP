@@ -1,0 +1,99 @@
+.caseStudyCase{
+    padding: clamp(3.75rem, 1.283rem + 10.53vw, 9.375rem) 0;
+    &__inner{
+        display: flex;
+        flex-direction: column;
+        gap:210px;
+    }
+    &__imgbox{
+        position: relative;
+    }
+    &__img{
+        overflow: hidden;
+        border-radius: 30px;
+        img{
+            border-radius: 30px;
+            transition: all .6s;
+            &:hover{
+                scale:1.2;
+            }
+        }
+    }
+    &__img-selected{
+        position:absolute;
+        bottom: -124px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    &__content{
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    &__content-item{
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+    &__content-title{
+        @extend %title;
+        font-size: clamp(1.5rem, 1.061rem + 1.87vw, 2.5rem);  
+    }
+    &__content-textbox{
+        p{
+            color:#595566;
+            &:not(:last-of-type){
+                margin-bottom: 30px;
+            }
+        }
+    }
+    &__content-list{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    &__content-link{
+        padding-left: 16px;
+        color:#595566;
+        position: relative;
+        &:before{
+            position: absolute;
+            content:"";
+            width: 5px;
+            height: 5px;
+            background-color: currentColor;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            border-radius: 50%;
+        }
+    }
+    &__content-img{
+        text-align: center;
+        img{
+            border-radius: 30px;
+        }
+    }
+
+    @media(max-width:767px){
+        &__inner{
+            gap: 40px;
+        }
+        &__img{
+            margin-bottom: 30px;
+        }
+        &__img-selected{
+            position: static;
+            transform: translate(0);
+            
+        }
+        &__content-img{
+            img{
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+}

@@ -1,0 +1,115 @@
+.information{
+    background: rgb(245, 245, 245);
+    padding: clamp(5.313rem, 3.531rem + 7.6vw, 9.375rem) 0;
+    &__box{
+        max-width: 700px;
+        text-align: center;
+        margin: 0 auto 16px;
+        .box__pubble{
+            margin: 0 auto;
+        }
+        .box__title{
+            margin: 0 auto;
+        }
+    }
+    &__items{
+        display: flex;
+        justify-content: space-between;
+        gap:20px;
+        align-items: flex-start;
+    }
+    &__itembox{
+        flex-basis: 500px;
+        display: flex;
+        flex-direction: column;
+        gap:60px;
+        align-items: flex-start;
+        &--left{
+            text-align: left;
+            .information__content{
+                padding-left: clamp(1.875rem, 0.97rem + 3.86vw, 3.938rem);
+                border-left: 1px dashed #151515;
+                left: 15px;
+                &:before{
+                    left:-17px;
+                }
+            }
+        }
+        &--right{
+            text-align: right;
+            .information__content{
+                padding-right: clamp(1.875rem, 0.97rem + 3.86vw, 3.938rem);
+                border-right: 1px dashed #151515;
+                right: 15px;
+                &:before{
+                    right:-17px;
+                }
+            }
+        }
+    }
+    &__content{
+        position: relative;
+        &:before{
+            position: absolute;
+            content:"";
+            width: 33px;
+            height: 33px;
+            background-color: #fff;
+            border-radius: 50%;
+            border:10px solid $accent-color;
+            top: 0;
+        }
+    }
+    &__pubble{
+        @extend %pubble;
+        margin-bottom: 40px;
+    }
+    &__text{
+        color:#8a8a8a;
+        font-size: 18px;
+        text-transform: capitalize;
+        margin-bottom: 2px;
+    }
+    &__title{
+        @extend %text;
+        @extend %cabin-500;
+        font-size: 25px;
+        margin-bottom: 20px;
+    }
+    &__subtitle{
+        color:#595566;
+    }
+    @media(max-width:1279px){
+        &__itembox{
+            flex-basis: 470px;
+        }    
+    }
+    @media(max-width:1023px){
+        &__items{
+            flex-direction: column;
+            gap: 60px;
+        }
+        &__pubble{
+            margin-bottom: 20px;
+        }
+        &__itembox{
+            flex-basis: auto;
+            &--right{
+                text-align: left;
+                .information__content{
+                    padding-left: clamp(1.875rem, 0.97rem + 3.86vw, 3.938rem);
+                    border-left: 1px dashed #151515;
+                    left: 15px;
+                    padding-right: 0;
+                    border-right: none;
+                    &:before{
+                        left:-17px;
+                    }
+                }
+                .information__pubble{
+                    display: none;
+                }
+            }
+        }
+    }
+}

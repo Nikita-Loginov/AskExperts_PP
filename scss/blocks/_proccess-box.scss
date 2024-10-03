@@ -1,0 +1,64 @@
+.proccess-box{
+    flex-basis: 500px;
+    &__box{
+        margin-bottom: 16px;
+    }
+    &__text{
+        &:not(:last-of-type){
+            margin-bottom: 20px;
+        }
+    }
+    &__textbox{
+        margin-bottom: clamp(1.25rem, 0.702rem + 2.34vw, 2.5rem);
+    }
+    &__list{
+        display: flex;
+        flex-direction: column;
+        gap:clamp(1.563rem, 1.151rem + 1.75vw, 2.5rem);
+        counter-reset: customitem;
+        list-style: none;
+    }
+    &__item{
+        padding-top: 28px;
+        border-top: 1px solid #c1c1c1;
+        display: flex;
+        gap:15px;
+        counter-increment: customitem;
+    }
+    &__decor{
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        @extend %flexCenter;
+        flex-shrink: 0;
+        position: absolute;
+        font-size: 26px;
+        @extend %cabin-700;
+        &:before{
+            position: absolute;
+            content:counter(customitem);
+        }
+        &--yellow{
+            background-color: #ffcc4a;
+            color:#181818;
+        }
+        &--green{
+            background-color: $accent-color;
+            color:#fff;
+        }
+        &--black{
+            background-color: #181818;
+            color:#fff;
+        }
+    }
+    &__info{
+        display: flex;
+        flex-direction: column;
+        gap:10px;
+        max-width: 400px;
+        padding-left: 70px;
+    }
+    &__title{
+        @extend %text;
+    }
+}

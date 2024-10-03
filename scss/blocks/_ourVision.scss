@@ -1,0 +1,103 @@
+.ourVision{
+    padding: 95px 0 clamp(3.75rem, 1.283rem + 10.53vw, 9.375rem);
+    &__inner{
+        display: flex;
+        flex-direction: column;
+        gap:50px;
+    }
+    &__about{
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+    }
+    &__content{
+        flex-basis: 590px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+    &__textbox{
+        p{
+            &:not(:last-of-type){
+                margin-bottom: 10px;
+            }
+        }
+    }
+    &__list{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    &__item{
+        display: flex;
+        align-items: center;
+        gap:20px;
+    }
+    &__item-decor{
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: 2px solid rgb(78, 175, 78);
+        @extend %flexCenter;
+        position: relative;
+        flex-shrink: 0;
+        &:before{
+            position: absolute;
+            content:"";
+            width: 11px;
+            height: 8px;
+            background-repeat: no-repeat;
+            background-image: url(../img/icon/chevron.svg);
+        }
+    }
+    &__imgbox{
+        align-self: flex-end;
+        position: relative;
+        &:before{
+            position: absolute;
+            content:"";
+            width: 226px;
+            height: 226px;
+            top: 0;
+            right: -100px;
+            background-image: url(../img/icon/dots.svg);
+            z-index: -1;
+        }
+    }
+    &__img{
+        margin-top: 44px;
+        border-radius: $borderRadiusCard;
+        img{
+            border-radius:inherit
+        }
+    }
+    @media(max-width:1279px){
+        &__imgbox{
+            &:before{
+                display: none;
+            }
+        }
+    }
+    @media(max-width:1023px){
+        &__about{
+            flex-direction: column-reverse;
+        }
+        &__content{
+            flex-basis: auto;
+        }
+        &__imgbox{
+            align-self:center;
+        }
+        &__img{ 
+            margin: 0;
+        }
+    }
+    @media(max-width:767px){
+        &__img{
+            img{
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+}

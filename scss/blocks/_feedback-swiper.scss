@@ -1,0 +1,123 @@
+.feedback-swiper{
+    position: relative;
+    &__slide{
+        display: flex;
+        flex-direction: column;
+        gap:34px;
+    }
+    &__textbox{
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        max-width: 628px;
+        margin: 0 auto;
+        align-items: flex-start;
+        text-align: center;
+    }
+    &__pubble{
+        @extend %pubble;
+        margin: 0 auto;
+    }
+    &__blockquote{
+        @extend %title;
+        font-size: clamp(1.875rem, 1.601rem + 1.17vw, 2.5rem);
+        color:#CECECE;
+        span{
+            color:#181818;
+        }
+    }
+    &__user{
+        display: flex;
+        flex-direction: column;
+        gap:28px;
+        text-align: center;
+    }
+    &__user-img{
+        margin: 0 auto;
+        border-radius: 50%;
+        object-fit: cover;
+        object-position: top;
+    }
+    &__user-info{
+        display: flex;
+        flex-direction: column;
+        gap:8px;
+    }
+    &__user-name{
+        @extend %text;
+        text-transform: capitalize;
+    }
+    &__user-position{
+        @extend %cabin-800;
+        color:$accent-color;
+        text-transform: capitalize;
+    }
+    &__arrows{
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        z-index: 99;
+    }
+    &__prev,
+    &__next{
+        display: inline-flex;
+        align-items: center;
+        gap:10px;
+        background-color: rgb(243, 243, 243);
+        border-radius: 42px;
+        cursor: pointer;
+        transition: all .5s;
+        &:hover{
+            background-color: rgb(219, 217, 217);
+        }
+    }
+    &__decor{
+        width: clamp(2.25rem, 2.031rem + 0.94vw, 2.75rem);
+        height: clamp(2.25rem, 2.031rem + 0.94vw, 2.75rem);
+        border-radius: 50%;
+        position: relative;
+        @extend %flexCenter;
+        &:before{
+            position: absolute;
+            content:"";
+            width: 20px;
+            height: 17px;
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+    }
+    &__prev{
+        padding: 8px 25px 8px 8px;
+        .feedback-swiper__decor{
+            background-color: #181818;
+            &:before{
+                background-image: url(../img/icon/arrowPrev.svg);
+            }
+        }
+    }
+    &__next{
+        padding: 8px 8px 8px 25px;
+        .feedback-swiper__decor{
+            background-color: #ffc42b;
+            &:before{
+                background-image: url(../img/icon/arrowNext.svg);
+            }
+        }
+    }
+    &__text{
+        @extend %cabin-700;
+        font-size: 18px;
+        color:#353535;
+    }
+    @media(max-width:550px){
+        &__text{
+            display: none;
+        }
+        &__prev,
+        &__next{
+            padding: 8px;
+        }
+    }
+}

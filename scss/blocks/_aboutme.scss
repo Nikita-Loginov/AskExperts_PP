@@ -1,0 +1,172 @@
+.aboutme{
+    padding: clamp(0rem, -2.741rem + 11.7vw, 6.25rem) 0 clamp(6rem, 3.971rem + 8.65vw, 10.625rem);
+    &__inner{
+        display: flex;
+        gap: 20px;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__content{
+        flex-basis: 420px;
+        display: flex;
+        flex-direction: column;
+        gap:20px;
+    }
+    &__text{
+        color:$accent-color;
+        font-size: 18px;
+    }
+    &__info{
+        display: flex;
+        flex-direction: column;
+        gap:clamp(1.875rem, 4.745rem + -12.24vw, 3.75rem);
+        align-items: flex-start;
+    }
+    &__textbox{
+        display: flex;
+        flex-direction: column;
+        gap:11px;
+    }
+    &__appointment{
+        width: 290px;
+    }
+    &__appointment-mail,
+    &__appointment-tel{
+        display: flex;
+        align-items: center;
+        gap:11px;
+        padding: 20px 0;
+        border-top: 1px solid #d8d8d8;
+    }
+    &__appointment-mail{
+        &:hover{
+            .aboutme__appointment-mail-decor{
+                background-color: rgb(247, 229, 188);
+                &:before{
+                    rotate:360deg;
+                }
+            }
+        }
+    }
+    &__appointment-tel{
+        &:hover{
+            .aboutme__appointment-tel-decor{
+                background-color: rgb(200, 243, 200);
+                &:before{
+                    rotate:360deg;
+                }
+            }
+        }
+    }
+    &__appointment-mail-decor,
+    &__appointment-tel-decor{
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        @extend %flexCenter;
+        flex-shrink: 0;
+        position: relative;
+        transition: all 1s;
+        &:before{
+            position: absolute;
+            content:"";
+            background-repeat: no-repeat;
+            background-size: contain;
+            transition: all 1s;
+        }
+    }
+    &__appointment-mail-decor{
+        background-color: rgb(255, 243, 214);
+        &:before{
+            width: 17px;
+            height: 13px;
+            background-image: url(../img/icon/mail.svg);
+        }
+    }
+    &__appointment-tel-decor{
+        background-color: rgb(226, 244, 226);
+        &:before{
+            width: 17px;
+            height: 17px;
+            background-image: url(../img/icon/telAccent.svg);
+        }
+    }
+    &__appointment-mail-text,
+    &__appointment-tel-text{
+        font-size: clamp(1.125rem, 1.07rem + 0.23vw, 1.25rem);
+        @extend %cabin-500;
+        color:$main-color;
+    }
+    &__appointment-tel{
+        margin-bottom: 15px;
+    }
+    &__appointment-btn{
+        @extend %btn--default;
+    }
+    &__imgbox{
+        position: relative;
+        padding-left: 75px;
+        &:before{
+            position: absolute;
+            content:"";
+            left: 0;
+            top: 30%;
+            z-index: -1;
+            width: 327px;
+            height: 327px;
+            background-image: url(../img/icon/dots.svg);
+        }
+    }
+    &__img{
+        overflow: hidden;
+        img{
+            transition: all .6s;
+        }
+        &:hover{
+            img{
+                scale:1.2;
+            }
+        }
+    }
+    @media(max-width:1279px){
+        &__imgbox{
+            padding: 0;
+            &:before{
+                display: none;
+            }
+        }
+        &__img{
+            img{
+                width: 100%;
+            }
+        }
+        &__content{
+            flex-basis: 576px;
+        }
+    }
+    @media(max-width:1023px){
+        &__inner{
+            flex-direction: column-reverse;
+        }
+        &__img{
+            img{
+                width:600px;
+            }
+        }
+        &__content{
+            flex-basis: auto;
+            align-self: flex-start;
+            width: 100%;
+        }
+        &__appointment{
+            width: 100%;
+        }
+    }
+    @media(max-width:767px){
+        &__img{
+            img{
+                width: 100%;
+            }
+        }
+    }
+}

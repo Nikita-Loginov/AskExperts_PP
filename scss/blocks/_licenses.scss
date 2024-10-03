@@ -1,0 +1,60 @@
+.licenses{
+    padding: clamp(3.75rem, 1.557rem + 9.36vw, 8.75rem) 0;
+    &__items{
+        display: flex;
+        flex-direction: column;
+        gap: clamp(3.125rem, 2.275rem + 3.63vw, 5.063rem);
+    }
+    &__item{
+        display: flex;
+        gap: 20px;
+    }
+    &__titlebox{
+        flex-basis: 387px;
+        h4{
+            @extend %title;
+        }
+    }
+    &__content{
+        flex-basis: 800px;
+        display: flex;
+        flex-direction: column;
+        gap: clamp(1.25rem, 0.976rem + 1.17vw, 1.875rem);
+    }
+    &__textbox{
+        display: flex;
+        flex-direction: column;
+        gap: 22px;
+        p{
+            color: #585858;
+            a{
+                color: #181818;
+                @extend %lato-700;
+            }
+        }
+    }
+    &__confirmation{
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+    &__info-title{
+        @extend %title;
+        font-size: clamp(1.625rem, 1.378rem + 1.05vw, 2.188rem);
+    }
+    &__info-text{
+        font-size: clamp(1.625rem, 1.515rem + 0.47vw, 1.875rem);
+        color:#181818;
+    }
+    @media(max-width:767px){
+        &__item{
+            flex-direction: column;
+        }
+        &__titlebox{
+            flex-basis:auto;
+        }
+        &__content{
+            flex-basis:auto;
+        }
+    }
+}

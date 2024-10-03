@@ -1,0 +1,19 @@
+.partner{
+    padding: clamp(1.25rem, 0.62rem + 2.69vw, 2.688rem) 0 ;
+    &__list{
+        display: flex;
+        justify-content: space-between;
+        gap:20px;
+        align-items: center;
+        animation: scrollPartner 70s linear infinite;
+    }
+}
+
+@keyframes scrollPartner{
+    0%{
+        transform: translateX(-100%);
+    }
+    100%{
+        transform: translateX(100%);
+    }
+}

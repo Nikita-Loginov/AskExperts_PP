@@ -1,0 +1,85 @@
+.blogSingle{
+    padding: 43px 0 clamp(3.75rem, 1.009rem + 11.7vw, 10rem);
+    &__inner{
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+    &__item{
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        align-items: flex-start;
+    }
+    &__title{
+        @extend %title;
+        font-size: clamp(1.5rem, 1.061rem + 1.87vw, 2.5rem);
+    }
+    &__textbox{
+        p{
+            color:#595566;
+            &:not(:last-of-type){
+                margin-bottom: 15px;
+            }
+        }
+    }
+    &__imgbox{
+        img{
+            border-radius: 30px;
+        }
+    }
+    &__list{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        list-style: none;
+        counter-reset: custom-list;
+    }
+    &__link{
+        counter-increment: custom-list;
+        position: relative;
+        padding-left: 20px;
+        &:before{
+            position: absolute;
+            content: counter(custom-list);
+            left: 0;
+        }
+    }
+    &__blockquote{
+        border-radius: $borderRadiusCard;
+        background-color: #181818;
+        padding: clamp(2.5rem, 1.02rem + 6.32vw, 5.875rem) 20px;
+        width: 100%;
+    }
+    &__blockquote-content{
+        max-width: 900px;
+        margin: 0 auto;
+        padding-top: 90px;
+        position: relative;
+        &:before{
+            position: absolute;
+            content:"";
+            width: 84px;
+            height: 48px;
+            background-repeat: no-repeat;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background-image: url(../img/icon/quotes.svg)
+        }
+    }
+    &__blockquote-text{
+        @extend %cabin-400;
+        font-size: clamp(1.125rem, 0.741rem + 1.64vw, 2rem);
+        color:#fff;
+        text-align: center;
+    }
+    @media(max-width: 1279px){
+        &__imgbox{
+            img{
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+}

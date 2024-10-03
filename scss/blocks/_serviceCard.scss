@@ -1,0 +1,57 @@
+.serviceCard{
+    padding: clamp(6rem, 3.971rem + 8.65vw, 10.625rem) 0;
+    background: rgb(245, 245, 245);
+    &__box{
+        text-align: center;
+        max-width: 780px;
+        margin: 0 auto;
+        margin-bottom: 30px;
+        .box__pubble{
+            margin: 0 auto;
+        }
+    }
+    &__items{
+        display: grid;
+        justify-content: space-between;
+        gap:20px;
+        grid-template-columns: repeat(auto-fill,minmax(320px,1fr));
+    }
+    &__item{
+        padding: 49px 47px 49px 47px;
+        background: rgb(235, 235, 235);
+        border-radius: $borderRadiusCard;
+        transition: all 0.6s;
+        display: flex;
+        flex-direction: column;
+        gap:clamp(0.938rem, 0.663rem + 1.17vw, 1.563rem);
+        &:hover{
+            background: rgb(24, 24, 24);
+            scale:1.05;
+            .serviceCard__item-title{
+                color:#fff;                                     
+            }
+            .serviceCard__item-text{
+                color:#fff;  
+            }
+            .serviceCard__item-icon{
+                scale:1.05;
+            }
+        }
+    }
+    &__item-content{
+        display: flex;
+        flex-direction: column;
+        gap:10px;
+    }
+    &__item-icon{
+        transition: all .6s;
+    }
+    &__item-title{
+        @extend %text;
+        font-size: clamp(1.25rem, 1.113rem + 0.58vw, 1.563rem);
+        transition: all .6s;
+    }
+    &__item-text{
+        transition: all .6s;
+    }
+}

@@ -1,0 +1,14 @@
+.financial{
+    padding: clamp(3.75rem, 1.283rem + 10.53vw, 9.375rem) 0;
+    background-color: #F5F5F5;
+    &__inner{
+        display: flex;
+        flex-direction: column;
+        gap:clamp(2.5rem, 1.678rem + 3.51vw, 4.375rem);
+    }
+    &__box{
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: space-between;
+    }
+}

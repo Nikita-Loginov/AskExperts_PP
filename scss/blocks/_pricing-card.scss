@@ -1,0 +1,99 @@
+.pricing-card{
+    border-radius: $borderRadiusCard;
+    background-color: #fff;
+    padding: clamp(0.938rem, 0.746rem + 0.82vw, 1.375rem) clamp(0.938rem, 0.746rem + 0.82vw, 1.375rem) clamp(2rem, 1.726rem + 1.17vw, 2.625rem) clamp(0.938rem, 0.746rem + 0.82vw, 1.375rem);
+    gap:32px;
+    transition: all .5s;
+    display: none;
+    &--active{
+        display: flex;
+        flex-direction: column;
+    }
+        &:hover{
+            scale:1.05;
+        }
+    &__content{
+        border-radius: $borderRadiusCard;
+        background-color: rgb(48, 48, 48);
+        padding: 35px 40px 25px 30px;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        flex:1;
+        &:before{
+            position: absolute;
+            content:"";
+            width: 98px;
+            height: 98px;
+            right: 22px;
+            top: -46px;
+            background-image: url(../img/icon/starmuny.svg);
+        }
+    }
+    &__textboox{
+        margin-bottom: 15px;
+        flex:1;
+    }
+    &__title{
+        @extend %title;
+        color:#fff;
+        font-size: clamp(1.375rem, 1.265rem + 0.47vw, 1.625rem);
+        margin-bottom: 10px;
+    }
+    &__text{
+        color:#fff;
+    }
+    &__rate{
+        padding-top: 30px;
+        border-top: 1px dashed #565656;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    &__price{
+        font-size: clamp(2rem, 1.452rem + 2.34vw, 3.25rem);
+        @extend %cabin-700;
+        color:#fff;
+        line-height: 1.16;
+    }
+    &__pubble{
+        @extend %pubble;
+    }
+    &__points{
+        display: flex;
+        flex-direction: column;
+        gap:8px;
+        margin-left: 20px;
+    }
+    &__item{
+        color:#595566;
+        display: flex;
+        align-items: center;
+        gap:15px;
+        &-decor{
+            border-radius: 50%;
+            width: 21px;
+            height: 21px;
+            background-color: rgb(24, 24, 24);
+            display: flex;
+            align-items: center;
+            // justify-content: center;
+            position: relative;
+            &:before{
+                position: absolute;
+                content:"";
+                width: 13px;
+                height: 10px;
+                background-image: url(../img/icon/chevron-right.svg);
+                background-repeat: no-repeat;
+                z-index: 3;
+                left: 50%;
+                transform: translateX(-15%);
+            }
+        }
+    }
+    &__link{
+        @extend %btn--accent;
+    }
+}

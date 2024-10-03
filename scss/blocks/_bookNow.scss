@@ -1,0 +1,74 @@
+.bookNow{
+    padding: clamp(4.375rem, 1.634rem + 11.7vw, 10.625rem) 0;
+    &__inner{
+        padding: 0 clamp(3.125rem, 2.029rem + 4.68vw, 5.625rem);
+        background: rgb(24, 24, 24);
+        border-radius: $borderRadiusCard;
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        align-items: center;
+    }
+    &__content{
+        flex-basis: 430px;
+        padding: 30px 0;
+    }
+    &__box{
+        margin-bottom: 8px;
+        .box__title{
+            color:#fff;
+            span{
+                color:#727272;
+            }
+        }
+    }
+    &__text{
+        color:#fff;
+        margin-bottom: 20px;
+    }
+    &__link{
+        display: inline-flex;
+        align-items: center;
+        min-height: $minHeight-btn;
+        @include padding(0,30px,0,21px);
+        @include borderRadius($borderRadiusBtn);
+        background-color: $button-colorbg-accent;
+        transition: all .5s;
+        position: relative;
+        &:hover{
+            transform: translateY(-4px);
+        }
+    }
+    &__link-text{
+        font-size: 18px;
+        line-height: 160%;
+        color:#353535;
+        padding-left: 27px;
+        @extend %cabin-700;
+        position: relative;
+        display: flex;
+        align-items: center;
+        &:before{
+            content:"";
+            position: absolute;
+            left: 0;
+            width: 21px;
+            height: 21px;
+            background-image: url(../img/icon/tel.svg);
+            background-repeat: no-repeat;
+        }
+    }
+    @media(max-width: 1023px){
+        &__img{
+            display: none;
+        }
+        &__content{
+            padding: 60px 0;
+            flex-basis: auto;
+        }
+        &__link{
+            width: 100%;
+            justify-content: center;
+        }
+    }
+}

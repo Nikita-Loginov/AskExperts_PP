@@ -1,0 +1,65 @@
+.proccess-clients{
+    flex-basis: 575px;
+    &__box{
+        margin-bottom: 16px;
+    }
+    &__text{
+        &:not(:last-of-type){
+            margin-bottom: 20px;
+        }
+    }
+    &__texbox{
+        margin-bottom: 7px;
+    }
+    &__items{
+        display: grid;
+        justify-content: space-between;
+        gap:15px;
+        grid-template-columns: repeat(auto-fill,minmax(240px,1fr));
+    }
+    &__item{
+        display: flex;
+        flex-direction: column;
+        gap:20px;
+        padding: 33px 23px 33px 23px;
+        border: 1px solid rgb(234, 234, 234);
+        border-radius: 20px;
+        background: rgb(250, 250, 250);
+        transition: all 0.6s;
+        &:hover{
+            scale:1.05;
+            background: rgb(24, 24, 24);
+            .proccess-clients__title{
+                color:#fff;    
+            }
+            .proccess-clients__text{
+                color:#fff;
+            }
+        }
+    }
+    &__decor{
+        @extend %flexCenter;
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        background-color: #181818;
+    }
+    &__content{
+        display: flex;
+        flex-direction: column;
+        gap:10px;
+    }
+    &__title{
+        @extend %text;
+    }
+    @media(max-width:1279px){
+        &__items{
+            grid-template-columns: repeat(2,1fr);
+        }
+    }
+    @media(max-width:550px){
+        &__items{
+            grid-template-columns: repeat(1,1fr);
+        }
+    }
+}
